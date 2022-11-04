@@ -7,7 +7,7 @@ node {
 
   stage('Build') {
     // you should build this repo with a maven build step here
-    echo "hello"
+    echo "Hello, Alisha"
   }
   // you should add a test report here
 }
