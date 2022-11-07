@@ -18,7 +18,7 @@ node {
             eco "I'm testing!"
         }
      } finally {
-        junit 'build-pipeline-job/**/*.xml'
+        junit '**/build-pipeline-job/test-reports/*.xml'
         }
   }
 }
