@@ -15,9 +15,7 @@ node {
   node {
      try {
         stage('Test') {
-            withMaven (maven: 'maven3'){
-                    sh "mvn test"
-                }
+            eco "I'm testing!"
         }
      } finally {
         junit '**/target/test-reports/*.xml'
