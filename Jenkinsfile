@@ -15,6 +15,7 @@ node {
   node {
     try {
         stage('Test') {
+            echo "I made it here"
             sh './mvn package'
         }
        } finally {
