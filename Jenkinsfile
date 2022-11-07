@@ -14,7 +14,6 @@ node {
   // you should add a test report here
   node{
    stage('Test') {
-        archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
         junit 'build/reports/**/*.xml'
         }
   }
