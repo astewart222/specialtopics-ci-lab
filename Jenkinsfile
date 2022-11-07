@@ -15,7 +15,7 @@ node {
   node {
     try {
         stage('Test') {
-            sh './gradlew check'
+            sh './mvn package'
         }
        } finally {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
