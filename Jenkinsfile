@@ -15,7 +15,7 @@ node {
   node {
     try {
         stage('Test') {
-            sh './maven.groovy'
+            sh './init.groovy.d/maven.groovy'
         }
        } finally {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
