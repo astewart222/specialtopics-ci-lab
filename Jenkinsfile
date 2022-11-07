@@ -12,4 +12,14 @@ node {
     }
   }
   // you should add a test report here
+  node {
+    try {
+        stage('Test') {
+            sh './maven.groovy'
+        }
+       } finally {
+        archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
+        junit 'build/reports/**/*.xml'
+       }
+  }
 }
