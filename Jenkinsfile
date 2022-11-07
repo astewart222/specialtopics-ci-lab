@@ -12,8 +12,14 @@ node {
     }
   }
   // you should add a test report here
-  node{
-   stage('Test') {
+  node {
+     try {
+        stage('Test') {
+            withMaven (maven: 'maven3'){
+                sh "mvn test"
+           }
+        }
+     } finally {
         junit 'build/reports/**/*.xml'
         }
   }
