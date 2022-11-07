@@ -12,13 +12,8 @@ node {
     }
   }
   // you should add a test report here
-  node {
-     try {
-        stage('Test') {
-            eco "I'm testing!"
-        }
-     } finally {
+  stage('Test'){
         junit '**/target/surefire-reports/*.xml'
-        }
-  }
+     }
+
 }
