@@ -18,7 +18,7 @@ node {
             eco "I'm testing!"
         }
      } finally {
-        junit '**/target/test-reports/*.xml'
+        junit '**/target/surefire-reports/*.xml'
         }
   }
 }
