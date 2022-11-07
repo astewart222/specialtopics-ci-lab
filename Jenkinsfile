@@ -15,8 +15,7 @@ node {
   node {
     try {
         stage('Test') {
-            echo "I made it here"
-            sh './mvn package'
+            sh "mvn package"
         }
        } finally {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
