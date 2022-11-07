@@ -14,7 +14,7 @@ node {
   // you should add a test report here
     try {
         stage('Test') {
-            sh "./mvn"
+            sh "./maven3"
         }
        } finally {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
