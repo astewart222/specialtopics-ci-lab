@@ -18,7 +18,7 @@ node {
             eco "I'm testing!"
         }
      } finally {
-        junit '**/build-pipeline-job/*/*.xml'
+        junit '**/target/surefire-reports/*.xml'
         }
   }
 }
