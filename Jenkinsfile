@@ -8,17 +8,19 @@ node {
   stage('Build') {
     // you should build this repo with a maven build step here
     withMaven (maven: 'maven3'){
-        sh "mvn package"
+        sh "mvn install"
     }
   }
   // you should add a test report here
   node {
      try {
         stage('Test') {
-            echo "I might pass this test!"
+            withMaven (maven: 'maven3'){
+                    sh "mvn test"
+                }
         }
      } finally {
-        junit 'build/reports/**/*.xml'
+        junit '**/target/test-reports/*.xml'
         }
   }
 }
