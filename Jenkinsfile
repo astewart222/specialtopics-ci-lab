@@ -11,5 +11,9 @@ node {
         sh "mvn package"
     }
   }
-  // you should add a test report here
+
+ stage('Test'){
+    junit '**/target/surefire-reports/*.xml'
+ }
+
 }
