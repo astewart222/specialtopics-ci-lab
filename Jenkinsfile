@@ -16,7 +16,7 @@ node {
      try {
         stage('Test') {
             withMaven (maven: 'maven3'){
-                sh "mvn check"
+                sh "./mvn check"
            }
         }
      } finally {
