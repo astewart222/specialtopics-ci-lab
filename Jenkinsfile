@@ -15,7 +15,7 @@ node {
   node {
     try {
         stage('Test') {
-            sh './init.groovy.d/maven.groovy'
+            sh './gradlew check'
         }
        } finally {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
