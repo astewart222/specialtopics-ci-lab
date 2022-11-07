@@ -15,7 +15,9 @@ node {
   node{
     try {
         stage('Test') {
+        withMaven (maven: 'maven3'){
             sh "./mvn test"
+            }
         }
        } finally {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
