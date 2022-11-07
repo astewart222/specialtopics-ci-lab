@@ -12,14 +12,12 @@ node {
     }
   }
   // you should add a test report here
-  node {
     try {
         stage('Test') {
-            sh "mvn package"
+            sh "mvn check"
         }
        } finally {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
         junit 'build/reports/**/*.xml'
        }
-  }
 }
