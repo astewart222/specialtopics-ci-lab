@@ -13,15 +13,9 @@ node {
   }
   // you should add a test report here
   node{
-    try {
-        stage('Test') {
-        withMaven (maven: 'maven3'){
-            sh "mvn test"
-            }
-        }
-       } finally {
+   stage('Test') {
         archiveArtifacts archiveArtifacts: 'build/libs/**/*.jar', fingerprint: true
         junit 'build/reports/**/*.xml'
-       }
+        }
   }
 }
